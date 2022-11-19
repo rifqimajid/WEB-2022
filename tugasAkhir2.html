@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Input Data Pribadi</title>
+    <script>
+        function simpan() {		
+            var storage = document.getElementById('nama').value;
+            localStorage.setItem('Text',storage);	
+        } 
+        
+        function tampil() {
+            var tampil= localStorage.getItem('Text');
+            if (tampil) {
+            x = document.getElementById('tampil');
+            x.innerHTML=tampil;
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <header role="title">
+        <h1>Data Pribadi</h1>
+        <p>Silahkan isi data pribadi di sini yaa..</p>
+        <p>Data kamu dijamin kerahasiannya, karena ga akan di-<i>publish</i></p>
+    </header>
+    <article>
+        <section>
+            <form name="formulir">
+                Nama :
+                <input type="text" id="nama" required autofocus/>
+                </br>Usia : 
+                <input type="number" min="0" max="30" step "1" value="20" name="angka"/>
+                <br/> email : 
+                <input type="email" name="email" placeholder="email@example.com" />
+                <br/>
+
+                <input type="button" value="Simpan" onclick="simpan()" />
+                <input type="button" value="Tampil" onclick="tampil()" />
+                <div id="tampil"></div>
+            </form>
+        </section>
+    </article>
+    <nav>
+        <p>Kunjungi github kami biar kita bisa berbagi karya</p>
+    </nav>
+    <footer>
+        <p>Dibuat oleh 
+            <a href="https://github.com/rifqimajid" >Rifqi</a>
+        </p>
+    </footer>
+</body>
+</html>
